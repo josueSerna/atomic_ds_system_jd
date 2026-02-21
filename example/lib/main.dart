@@ -21,7 +21,18 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const DsHeadlineMedium('DS Atomic Example')),
-      body: Center(child: DsBodyMedium('Contenido principal')),
+      body: Column(
+        children: [
+          DsBodyMedium('Contenido principal'),
+          DsCardItem(
+            name: 'Pikachu',
+            number: '004',
+            imageUrl:
+                'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png',
+            types: ['eléctrico', 'siniestro'],
+          ),
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(Icons.add),

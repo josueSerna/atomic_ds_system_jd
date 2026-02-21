@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Widget de texto con estilo headlineLarge del tema
 class DsHeadlineLarge extends StatelessWidget {
   final String text;
 
@@ -22,7 +21,7 @@ class DsHeadlineMedium extends StatelessWidget {
     return Text(text, style: Theme.of(context).textTheme.headlineMedium);
   }
 }
-/// Widget de texto con estilo headlineSmall del tema
+
 class DsHeadlineSmall extends StatelessWidget {
   final String text;
 
