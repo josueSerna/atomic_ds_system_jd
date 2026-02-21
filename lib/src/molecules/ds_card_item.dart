@@ -31,39 +31,52 @@ class DsCardItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    return Stack(
-      children: [
-        Container(
-          width: screenWidth * 0.45,
-          padding: const EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                DsGetTypeColor.getTypeColor(types.first).withValues(alpha: 0.8),
-                DsGetTypeColor.getTypeColor(types.first),
+    return InkWell(
+      onTap: () => onTap,
+      borderRadius: BorderRadius.circular(16),
+      child: Stack(
+        children: [
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  DsGetTypeColor.getTypeColor(
+                    types.first,
+                  ).withValues(alpha: 0.8),
+                  DsGetTypeColor.getTypeColor(types.first),
+                ],
+              ),
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 12,
+              children: [
+                DsHeadlineSmall(name),
+                DsTypeWrap(types: types),
               ],
             ),
-            borderRadius: BorderRadius.circular(16),
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            spacing: 14,
-            children: [
-              DsHeadlineSmall(name),
-              DsTypeWrap(types: types),
-            ],
+          Positioned(right: -65, bottom: -20, child: DsPokeballImage()),
+          Positioned(
+            right: 0,
+            bottom: 0,
+            child: DsImageNetwork(imageUrl: imageUrl, imageSize: 100),
           ),
-        ),
-        Positioned(right: -65, bottom: -20, child: DsPokeballImage()),
-        Positioned(
-          right: 0,
-          bottom: 10,
-          child: DsImageNetwork(imageUrl: imageUrl, imageSize: 95),
-        ),
-      ],
+          Positioned(
+            right: 15,
+            top: 5,
+            child: DsBodyMedium(
+              '#$number',
+              color: DsColors.black.withValues(alpha: 0.3),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

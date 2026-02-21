@@ -1,4 +1,5 @@
 import 'package:atomic_ds_system_jd/atomic_ds_system_jd.dart';
+import 'package:example/pokemon.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(theme: DsTheme.darkTheme, home: const HomePage());
+    return MaterialApp(theme: DsTheme.theme, home: const HomePage());
   }
 }
 
@@ -19,19 +20,66 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Pokemon> pokeList = [
+      Pokemon(
+        name: 'Pikachu',
+        number: '025',
+        imageUrl:
+            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png',
+        types: ['eléctrico', 'siniestro'],
+      ),
+      Pokemon(
+        name: 'Venasaur',
+        number: '003',
+        imageUrl:
+            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png',
+        types: ['grass', 'water'],
+      ),
+      Pokemon(
+        name: 'Charmander',
+        number: '004',
+        imageUrl:
+            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png',
+        types: ['fire', 'fantasma'],
+      ),
+      Pokemon(
+        name: 'Venasaur',
+        number: '003',
+        imageUrl:
+            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png',
+        types: ['grass', 'water'],
+      ),
+    ];
     return Scaffold(
-      appBar: AppBar(title: const DsHeadlineMedium('DS Atomic Example')),
-      body: Column(
-        children: [
-          DsBodyMedium('Contenido principal'),
-          DsCardItem(
-            name: 'Pikachu',
-            number: '004',
-            imageUrl:
-                'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png',
-            types: ['eléctrico', 'siniestro'],
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Column(
+            children: [
+              DsBodyMedium('Contenido principal'),
+              Expanded(
+                child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                    childAspectRatio: 1.5,
+                  ),
+                  itemCount: pokeList.length,
+                  itemBuilder: (context, index) {
+                    final pokemon = pokeList[index];
+                    return DsCardItem(
+                      name: pokemon.name,
+                      number: pokemon.number,
+                      imageUrl: pokemon.imageUrl,
+                      types: pokemon.types,
+                    );
+                  },
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
