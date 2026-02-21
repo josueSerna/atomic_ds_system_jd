@@ -10,7 +10,7 @@ class DsColors {
   static const Color yellow = Color(0xFFFFCB05);
 
   /// Rojo principal de Pokémon TCG.
-  static const Color red = Color(0xFFE4000F);
+  static const Color red = Color.fromARGB(255, 175, 0, 0);
 
   /// Blanco para fondos y contenedores.
   static const Color white = Color(0xFFFFFFFF);

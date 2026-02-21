@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(theme: DsTheme.theme, home: const HomePage());
+    return MaterialApp(theme: DsTheme.darkTheme, home: const HomePage());
   }
 }
 
@@ -20,8 +20,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('DS Atomic Example')),
-      body: Center(child: DsHeadlineLarge('Contenido principal')),
+      appBar: AppBar(title: const DsHeadlineMedium('DS Atomic Example')),
+      body: Center(child: DsBodyMedium('Contenido principal')),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(Icons.add),

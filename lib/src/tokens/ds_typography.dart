@@ -12,6 +12,16 @@ class DsHeadlineLarge extends StatelessWidget {
   }
 }
 
+class DsHeadlineMedium extends StatelessWidget {
+  final String text;
+
+  const DsHeadlineMedium(this.text, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(text, style: Theme.of(context).textTheme.headlineMedium);
+  }
+}
 /// Widget de texto con estilo headlineSmall del tema
 class DsHeadlineSmall extends StatelessWidget {
   final String text;
@@ -21,5 +31,27 @@ class DsHeadlineSmall extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(text, style: Theme.of(context).textTheme.headlineSmall);
+  }
+}
+
+class DsLabelSmall extends StatelessWidget {
+  final String text;
+
+  const DsLabelSmall(this.text, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(text, style: Theme.of(context).textTheme.labelSmall);
+  }
+}
+
+class DsBodyMedium extends StatelessWidget {
+  final String text;
+
+  const DsBodyMedium(this.text, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(text, style: Theme.of(context).textTheme.bodyMedium);
   }
 }

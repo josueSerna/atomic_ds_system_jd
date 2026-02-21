@@ -7,7 +7,7 @@ abstract class DsTheme {
     useMaterial3: true,
     colorScheme: ColorScheme.fromSeed(
       seedColor: DsColors.blue,
-      primary: DsColors.blue,
+      primary: const Color.fromARGB(255, 175, 0, 0),
       secondary: DsColors.yellow,
       error: DsColors.red,
       surface: DsColors.white,
@@ -24,7 +24,7 @@ abstract class DsTheme {
     brightness: Brightness.dark,
     colorScheme: ColorScheme.fromSeed(
       seedColor: DsColors.blue,
-      primary: DsColors.blue,
+      primary: const Color.fromARGB(255, 175, 0, 0),
       secondary: DsColors.yellow,
       error: DsColors.red,
       surface: DsColors.darkSurface,
@@ -40,7 +40,6 @@ abstract class DsTheme {
   /// Tema de texto personalizado con tipografía Bold/Black para headers.
   static TextTheme get _textTheme => const TextTheme(
     displayLarge: TextStyle(
-      fontFamily: 'ArchivoBlack',
       fontSize: 57,
       fontWeight: FontWeight.w900, // Black
       color: DsColors.black,
@@ -57,19 +56,21 @@ abstract class DsTheme {
     ),
     headlineLarge: TextStyle(
       fontSize: 32,
+      fontFamily: 'ArchivoBlack',
       fontWeight: FontWeight.w700, // Bold
-      color: DsColors.black,
+      color: DsColors.white,
     ),
     headlineMedium: TextStyle(
-      fontFamily: 'Rubik',
+      fontFamily: 'ArchivoBlack',
       fontSize: 28,
       fontWeight: FontWeight.w700, // Bold
-      color: DsColors.black,
+      color: DsColors.white,
     ),
     headlineSmall: TextStyle(
       fontSize: 24,
+      fontFamily: 'ArchivoBlack',
       fontWeight: FontWeight.w700, // Bold
-      color: DsColors.black,
+      color: DsColors.white,
     ),
     titleLarge: TextStyle(
       fontSize: 22,
@@ -93,6 +94,7 @@ abstract class DsTheme {
     ),
     bodyMedium: TextStyle(
       fontSize: 14,
+      fontFamily: 'Rubik',
       fontWeight: FontWeight.w400, // Regular
       color: DsColors.black,
     ),
@@ -113,6 +115,7 @@ abstract class DsTheme {
     ),
     labelSmall: TextStyle(
       fontSize: 11,
+      fontFamily: 'Rubik',
       fontWeight: FontWeight.w500, // Medium
       color: DsColors.greyDark,
     ),
@@ -137,18 +140,20 @@ abstract class DsTheme {
       color: DsColors.darkTextPrimary,
     ),
     headlineLarge: TextStyle(
-      fontFamily: 'Rubik',
       fontSize: 32,
+      fontFamily: 'ArchivoBlack',
       fontWeight: FontWeight.w700, // Bold
       color: DsColors.darkTextPrimary,
     ),
     headlineMedium: TextStyle(
       fontSize: 28,
+      fontFamily: 'ArchivoBlack',
       fontWeight: FontWeight.w700, // Bold
       color: DsColors.darkTextPrimary,
     ),
     headlineSmall: TextStyle(
       fontSize: 24,
+      fontFamily: 'ArchivoBlack',
       fontWeight: FontWeight.w700, // Bold
       color: DsColors.darkTextPrimary,
     ),
@@ -174,6 +179,7 @@ abstract class DsTheme {
     ),
     bodyMedium: TextStyle(
       fontSize: 14,
+      fontFamily: 'Rubik',
       fontWeight: FontWeight.w400, // Regular
       color: DsColors.darkTextPrimary,
     ),
@@ -194,6 +200,7 @@ abstract class DsTheme {
     ),
     labelSmall: TextStyle(
       fontSize: 11,
+      fontFamily: 'Rubik',
       fontWeight: FontWeight.w500, // Medium
       color: DsColors.darkTextSecondary,
     ),
@@ -213,7 +220,7 @@ abstract class DsTheme {
   static AppBarTheme get _appBarTheme => const AppBarTheme(
     centerTitle: true,
     elevation: 0,
-    backgroundColor: DsColors.blue,
+    backgroundColor: DsColors.red,
     foregroundColor: DsColors.white,
     titleTextStyle: TextStyle(
       fontSize: 20,
@@ -233,7 +240,7 @@ abstract class DsTheme {
   static AppBarTheme get _darkAppBarTheme => const AppBarTheme(
     centerTitle: true,
     elevation: 0,
-    backgroundColor: DsColors.darkSurface,
+    backgroundColor: DsColors.red,
     foregroundColor: DsColors.darkTextPrimary,
     titleTextStyle: TextStyle(
       fontSize: 20,
