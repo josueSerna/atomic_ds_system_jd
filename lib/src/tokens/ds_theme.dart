@@ -40,6 +40,7 @@ abstract class DsTheme {
   /// Tema de texto personalizado con tipografía Bold/Black para headers.
   static TextTheme get _textTheme => const TextTheme(
     displayLarge: TextStyle(
+      fontFamily: 'ArchivoBlack',
       fontSize: 57,
       fontWeight: FontWeight.w900, // Black
       color: DsColors.black,
@@ -60,6 +61,7 @@ abstract class DsTheme {
       color: DsColors.black,
     ),
     headlineMedium: TextStyle(
+      fontFamily: 'Rubik',
       fontSize: 28,
       fontWeight: FontWeight.w700, // Bold
       color: DsColors.black,
@@ -119,6 +121,7 @@ abstract class DsTheme {
   /// Tema de texto personalizado para modo oscuro.
   static TextTheme get _darkTextTheme => const TextTheme(
     displayLarge: TextStyle(
+      fontFamily: 'ArchivoBlack',
       fontSize: 57,
       fontWeight: FontWeight.w900, // Black
       color: DsColors.darkTextPrimary,
@@ -134,6 +137,7 @@ abstract class DsTheme {
       color: DsColors.darkTextPrimary,
     ),
     headlineLarge: TextStyle(
+      fontFamily: 'Rubik',
       fontSize: 32,
       fontWeight: FontWeight.w700, // Bold
       color: DsColors.darkTextPrimary,

@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 
-class DsTypography {
-  DsTypography._();
+/// Widget de texto con estilo headlineLarge del tema
+class DsHeadlineLarge extends StatelessWidget {
+  final String text;
 
-  static const TextStyle textHeading = TextStyle(
-    fontFamily: 'ArchivoBlack',
-    fontSize: 25,
-    fontWeight: FontWeight.bold,
-  );
+  const DsHeadlineLarge(this.text, {super.key});
 
-  static const TextStyle subHeading = TextStyle(
-    fontFamily: 'ArchivoBlack',
-    fontSize: 20,
-    fontWeight: FontWeight.bold,
-  );
+  @override
+  Widget build(BuildContext context) {
+    return Text(text, style: Theme.of(context).textTheme.headlineLarge);
+  }
+}
 
-  static const TextStyle textBody = TextStyle(
-    fontFamily: 'Rubik',
-    fontSize: 15,
-  );
+/// Widget de texto con estilo headlineSmall del tema
+class DsHeadlineSmall extends StatelessWidget {
+  final String text;
+
+  const DsHeadlineSmall(this.text, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(text, style: Theme.of(context).textTheme.headlineSmall);
+  }
 }
