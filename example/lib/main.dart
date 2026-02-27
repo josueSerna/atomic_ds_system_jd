@@ -58,24 +58,7 @@ class HomePage extends StatelessWidget {
             children: [
               DsBodyMedium('Contenido principal'),
               Expanded(
-                child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    childAspectRatio: 1.5,
-                  ),
-                  itemCount: pokeList.length,
-                  itemBuilder: (context, index) {
-                    final pokemon = pokeList[index];
-                    return DsCardItem(
-                      name: pokemon.name,
-                      number: pokemon.number,
-                      imageUrl: pokemon.imageUrl,
-                      types: pokemon.types,
-                    );
-                  },
-                ),
+                child: DsGridCard()
               ),
             ],
           ),
