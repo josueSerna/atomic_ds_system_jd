@@ -58,7 +58,16 @@ class HomePage extends StatelessWidget {
             children: [
               DsBodyMedium('Contenido principal'),
               Expanded(
-                child: DsGridCard()
+                child: DsGridCard(
+                  children: pokeList.map((pokemon) {
+                    return DsCardItem(
+                      name: pokemon.name,
+                      number: pokemon.number,
+                      imageUrl: pokemon.imageUrl,
+                      types: pokemon.types,
+                    );
+                  }).toList(),
+                ),
               ),
             ],
           ),
