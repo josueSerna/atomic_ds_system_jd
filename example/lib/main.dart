@@ -59,6 +59,7 @@ class HomePage extends StatelessWidget {
               DsBodyMedium('Contenido principal'),
               Expanded(
                 child: DsGridCard(
+                  aspectRatio: 2.0,
                   children: [
                     DsCardMenu(name: 'Pokedex', color: Colors.red),
                     DsCardMenu(name: 'Pokedex', color: Colors.red),

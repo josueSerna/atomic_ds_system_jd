@@ -22,7 +22,6 @@ class DsCardMenu extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            height: 100,
             width: double.infinity,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
@@ -39,7 +38,7 @@ class DsCardMenu extends StatelessWidget {
               children: [DsHeadlineSmall(name)],
             ),
           ),
-          Positioned(right: -65, bottom: 10, child: DsPokeballImage()),
+          Positioned(right: -65, bottom: -25, child: DsPokeballImage()),
         ],
       ),
     );
