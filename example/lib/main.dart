@@ -53,20 +53,18 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 1),
           child: Column(
             children: [
               DsBodyMedium('Contenido principal'),
               Expanded(
                 child: DsGridCard(
-                  children: pokeList.map((pokemon) {
-                    return DsCardItem(
-                      name: pokemon.name,
-                      number: pokemon.number,
-                      imageUrl: pokemon.imageUrl,
-                      types: pokemon.types,
-                    );
-                  }).toList(),
+                  children: [
+                    DsCardMenu(name: 'Pokedex', color: Colors.red),
+                    DsCardMenu(name: 'Pokedex', color: Colors.red),
+                    DsCardMenu(name: 'Pokedex', color: Colors.red),
+                    DsCardMenu(name: 'Pokedex', color: Colors.red),
+                  ],
                 ),
               ),
             ],
