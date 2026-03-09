@@ -16,6 +16,7 @@ abstract class DsTheme {
     elevatedButtonTheme: _elevatedButtonTheme,
     appBarTheme: _appBarTheme,
     cardTheme: _cardTheme,
+    inputDecorationTheme: _inputDecorationTheme,
   );
 
   /// Tema oscuro de la aplicación.
@@ -34,6 +35,7 @@ abstract class DsTheme {
     elevatedButtonTheme: _elevatedButtonTheme,
     appBarTheme: _darkAppBarTheme,
     cardTheme: _darkCardTheme,
+    inputDecorationTheme: _darkInputDecorationTheme,
     scaffoldBackgroundColor: DsColors.darkBackground,
   );
 
@@ -256,4 +258,59 @@ abstract class DsTheme {
     margin: EdgeInsets.zero,
     color: DsColors.darkCard,
   );
+
+  /// Tema de inputs para modo claro.
+  static InputDecorationTheme get _inputDecorationTheme => InputDecorationTheme(
+    filled: true,
+    fillColor: DsColors.greyLight,
+    contentPadding: const EdgeInsets.symmetric(
+      horizontal: DsSpacing.md,
+      vertical: DsSpacing.sm,
+    ),
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(DsSpacing.xs),
+      borderSide: const BorderSide(color: DsColors.greyMedium),
+    ),
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(DsSpacing.xs),
+      borderSide: const BorderSide(color: DsColors.greyMedium),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(DsSpacing.xs),
+      borderSide: const BorderSide(color: DsColors.blue, width: 2),
+    ),
+    hintStyle: const TextStyle(
+      fontSize: 14,
+      fontFamily: 'Rubik',
+      color: DsColors.greyDark,
+    ),
+  );
+
+  /// Tema de inputs para modo oscuro.
+  static InputDecorationTheme get _darkInputDecorationTheme =>
+      InputDecorationTheme(
+        filled: true,
+        fillColor: DsColors.darkCard,
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: DsSpacing.md,
+          vertical: DsSpacing.sm,
+        ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(DsSpacing.xs),
+          borderSide: const BorderSide(color: DsColors.darkDivider),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(DsSpacing.xs),
+          borderSide: const BorderSide(color: DsColors.darkDivider),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(DsSpacing.xs),
+          borderSide: const BorderSide(color: DsColors.blue, width: 2),
+        ),
+        hintStyle: const TextStyle(
+          fontSize: 14,
+          fontFamily: 'Rubik',
+          color: DsColors.darkTextSecondary,
+        ),
+      );
 }
