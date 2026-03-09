@@ -6,6 +6,7 @@ class DsInput extends StatelessWidget {
   final bool autofocus;
   final ValueChanged<String>? onChanged;
   final Widget? suffix;
+  final InputDecoration? decoration;
 
   const DsInput({
     super.key,
@@ -14,6 +15,7 @@ class DsInput extends StatelessWidget {
     this.autofocus = false,
     this.onChanged,
     this.suffix,
+    this.decoration,
   });
 
   @override

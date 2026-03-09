@@ -6,7 +6,8 @@ class DsSearchInput extends StatelessWidget {
   final ValueChanged<String>? onChanged;
   final VoidCallback? onClear;
   final bool autofocus;
-  final String hintText;
+  final InputDecoration? decoration;
+  final String? hintText;
 
   const DsSearchInput({
     super.key,
@@ -14,7 +15,8 @@ class DsSearchInput extends StatelessWidget {
     this.onChanged,
     this.onClear,
     this.autofocus = false,
-    this.hintText = 'Buscar...',
+    this.hintText,
+    this.decoration
   });
 
   @override
@@ -24,11 +26,9 @@ class DsSearchInput extends StatelessWidget {
       autofocus: autofocus,
       hintText: hintText,
       onChanged: onChanged,
+      decoration: decoration,
       suffix: controller.text.isNotEmpty
-          ? IconButton(
-              icon: const Icon(Icons.clear),
-              onPressed: onClear,
-            )
+          ? IconButton(icon: const Icon(Icons.clear), onPressed: onClear)
           : null,
     );
   }
