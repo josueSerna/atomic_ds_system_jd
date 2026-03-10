@@ -16,6 +16,7 @@ class DsSearchInput extends StatelessWidget {
   final bool enabled;
   final String? hintText;
   final Widget? suffixIcon;
+  final FocusNode? focusNode;
 
   const DsSearchInput({
     super.key,
@@ -27,6 +28,7 @@ class DsSearchInput extends StatelessWidget {
     this.enabled = true,
     this.hintText = 'Buscar...',
     this.suffixIcon,
+    this.focusNode,
   });
 
   @override

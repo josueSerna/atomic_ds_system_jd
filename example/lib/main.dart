@@ -1,5 +1,8 @@
 import 'package:atomic_ds_system_jd/atomic_ds_system_jd.dart';
-import 'package:example/pokemon.dart';
+import 'package:example/pages/atoms_page.dart';
+import 'package:example/pages/molecules_page.dart';
+import 'package:example/pages/organisms_page.dart';
+import 'package:example/pages/tokens_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +14,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(theme: DsTheme.theme, home: const HomePage());
+    return MaterialApp(
+      title: 'Atomic DS Showcase',
+      theme: DsTheme.theme,
+      darkTheme: DsTheme.darkTheme,
+      home: const HomePage(),
+    );
   }
 }
 
@@ -20,51 +28,40 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Pokemon> pokeList = [
-      Pokemon(
-        name: 'Pikachu',
-        number: '025',
-        imageUrl:
-            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png',
-        types: ['eléctrico', 'siniestro'],
-      ),
-      Pokemon(
-        name: 'Venasaur',
-        number: '003',
-        imageUrl:
-            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png',
-        types: ['grass', 'water'],
-      ),
-      Pokemon(
-        name: 'Charmander',
-        number: '004',
-        imageUrl:
-            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png',
-        types: ['fire', 'fantasma'],
-      ),
-      Pokemon(
-        name: 'Venasaur',
-        number: '003',
-        imageUrl:
-            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png',
-        types: ['grass', 'water'],
-      ),
-    ];
     return Scaffold(
+      appBar: AppBar(title: const Text('Atomic Design System')),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 1),
+          padding: const EdgeInsets.all(DsSpacing.md),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              DsBodyMedium('Contenido principal'),
+              const DsBodyMedium('Explora todos los componentes del paquete'),
+              const SizedBox(height: DsSpacing.md),
               Expanded(
                 child: DsGridCard(
                   aspectRatio: 2.0,
                   children: [
-                    DsCardMenu(name: 'Pokedex', color: Colors.red),
-                    DsCardMenu(name: 'Pokedex', color: Colors.red),
-                    DsCardMenu(name: 'Pokedex', color: Colors.red),
-                    DsCardMenu(name: 'Pokedex', color: Colors.red),
+                    DsCardMenu(
+                      name: 'Tokens',
+                      color: DsColors.blue,
+                      onTap: () => _navigateTo(context, const TokensPage()),
+                    ),
+                    DsCardMenu(
+                      name: 'Atoms',
+                      color: DsColors.grass,
+                      onTap: () => _navigateTo(context, const AtomsPage()),
+                    ),
+                    DsCardMenu(
+                      name: 'Molecules',
+                      color: DsColors.fire,
+                      onTap: () => _navigateTo(context, const MoleculesPage()),
+                    ),
+                    DsCardMenu(
+                      name: 'Organisms',
+                      color: DsColors.dragon,
+                      onTap: () => _navigateTo(context, const OrganismsPage()),
+                    ),
                   ],
                 ),
               ),
@@ -72,10 +69,10 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.add),
-      ),
     );
+  }
+
+  void _navigateTo(BuildContext context, Widget page) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) => page));
   }
 }
