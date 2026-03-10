@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Atomic DS Showcase',
       theme: DsTheme.theme,
-      darkTheme: DsTheme.darkTheme,
       home: const HomePage(),
     );
   }
@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Atomic Design System')),
+      appBar: DsCustomAppBar(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(DsSpacing.md),

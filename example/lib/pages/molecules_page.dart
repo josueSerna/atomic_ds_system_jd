@@ -20,12 +20,12 @@ class _MoleculesPageState extends State<MoleculesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Molecules')),
+      appBar: DsCustomAppBar(title: 'Molecules',),
       body: ListView(
         padding: const EdgeInsets.all(DsSpacing.md),
         children: [
           // ── DsSearchInput ──
-          _SectionTitle('DsSearchInput'),
+          DsHeadlineSmall('DsSearchInput'),
           const SizedBox(height: DsSpacing.xs),
           const DsLabelSmall('Campo de búsqueda con estilo pill'),
           const SizedBox(height: DsSpacing.xs),
@@ -57,7 +57,7 @@ class _MoleculesPageState extends State<MoleculesPage> {
           Container(
             padding: const EdgeInsets.all(DsSpacing.sm),
             decoration: BoxDecoration(
-              color: DsColors.red,
+              color: DsColors.white,
               borderRadius: BorderRadius.circular(DsSpacing.xs),
             ),
             child: DsSearchInput(
@@ -72,7 +72,7 @@ class _MoleculesPageState extends State<MoleculesPage> {
           const SizedBox(height: DsSpacing.lg),
 
           // ── DsCardMenu ──
-          _SectionTitle('DsCardMenu'),
+          DsHeadlineSmall('DsCardMenu'),
           const SizedBox(height: DsSpacing.xs),
           const DsLabelSmall('Tarjetas de menú con gradient y Pokébola'),
           const SizedBox(height: DsSpacing.xs),
@@ -115,7 +115,7 @@ class _MoleculesPageState extends State<MoleculesPage> {
           const SizedBox(height: DsSpacing.lg),
 
           // ── DsCardItem ──
-          _SectionTitle('DsCardItem'),
+          DsHeadlineSmall('DsCardItem'),
           const SizedBox(height: DsSpacing.xs),
           const DsLabelSmall(
             'Tarjeta Pokémon con imagen, tipo, número y gradiente',
@@ -172,21 +172,6 @@ class _MoleculesPageState extends State<MoleculesPage> {
           const SizedBox(height: DsSpacing.xxl),
         ],
       ),
-    );
-  }
-}
-
-class _SectionTitle extends StatelessWidget {
-  final String title;
-  const _SectionTitle(this.title);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: Theme.of(
-        context,
-      ).textTheme.titleLarge?.copyWith(color: DsColors.red),
     );
   }
 }

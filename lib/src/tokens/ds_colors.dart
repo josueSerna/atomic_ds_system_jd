@@ -82,29 +82,46 @@ class DsColors {
   /// Celeste - Tipo Ice/Hielo.
   static const Color ice = Color(0xFF98D8D8);
 
-  // Colores de UI
-  /// Color de fondo para tarjetas.
-  static const Color cardBackground = Color(0xFFF5F5F5);
+  // ── Colores de UI — Light ──
+
+  /// Fondo del scaffold en modo claro.
+  static const Color lightBackground = Color(0xFFFFFFFF);
+
+  /// Superficie elevada en modo claro (tarjetas, sheets).
+  static const Color lightSurface = Color(0xFFF7F8FA);
+
+  /// Fondo de tarjetas en modo claro.
+  static const Color cardBackground = Color(0xFFF0F2F5);
 
   /// Color de sombra.
   static const Color shadow = Color(0x1A000000);
 
-  // Colores para Dark Theme
-  /// Fondo oscuro principal.
-  static const Color darkBackground = Color(0xFF121212);
+  /// Texto principal en modo claro (títulos).
+  static const Color lightTextPrimary = Color(0xFF1A1A2E);
 
-  /// Fondo oscuro para superficies elevadas.
-  static const Color darkSurface = Color(0xFF1E1E1E);
+  /// Texto secundario en modo claro (body, labels).
+  static const Color lightTextSecondary = Color(0xFF5C5C70);
 
-  /// Fondo oscuro para tarjetas.
-  static const Color darkCard = Color(0xFF2C2C2C);
+  /// Divisores y bordes en modo claro.
+  static const Color lightDivider = Color(0xFFE0E2E8);
 
-  /// Texto principal en tema oscuro.
+  // ── Colores de UI — Dark ──
+
+  /// Fondo del scaffold en modo oscuro (azul noche tenue).
+  static const Color darkBackground = Color(0xFF0F1626);
+
+  /// Superficie elevada en modo oscuro.
+  static const Color darkSurface = Color(0xFF1A2238);
+
+  /// Fondo de tarjetas en modo oscuro.
+  static const Color darkCard = Color(0xFF243052);
+
+  /// Texto principal en modo oscuro (títulos blancos).
   static const Color darkTextPrimary = Color(0xFFFFFFFF);
 
-  /// Texto secundario en tema oscuro.
-  static const Color darkTextSecondary = Color(0xFFB0B0B0);
+  /// Texto secundario en modo oscuro.
+  static const Color darkTextSecondary = Color(0xFFA8B0C8);
 
-  /// Divisores en tema oscuro.
-  static const Color darkDivider = Color(0xFF3C3C3C);
+  /// Divisores y bordes en modo oscuro.
+  static const Color darkDivider = Color(0xFF2E3A56);
 }

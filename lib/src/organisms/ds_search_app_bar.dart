@@ -26,18 +26,14 @@ class DsSearchAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final bgColor =
+        backgroundColor ??
+        (isDark ? DsColors.darkBackground : DsColors.lightBackground);
+
     return Container(
       height: height + MediaQuery.of(context).padding.top,
-      decoration: BoxDecoration(
-        color: backgroundColor ?? DsColors.white,
-        boxShadow: [
-          BoxShadow(
-            color: DsColors.shadow,
-            blurRadius: elevation * 4,
-            offset: Offset(0, elevation),
-          ),
-        ],
-      ),
+      decoration: BoxDecoration(color: bgColor),
       child: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(

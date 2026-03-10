@@ -20,12 +20,12 @@ class _AtomsPageState extends State<AtomsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Atoms')),
+      appBar: DsCustomAppBar(title: 'Atomos',),
       body: ListView(
         padding: const EdgeInsets.all(DsSpacing.md),
         children: [
           // ── Typography Widgets ──
-          _SectionTitle('DsTypography Widgets'),
+          DsHeadlineMedium('DsTypography Widgets'),
           const SizedBox(height: DsSpacing.xs),
           Container(
             padding: const EdgeInsets.all(DsSpacing.md),
@@ -49,13 +49,13 @@ class _AtomsPageState extends State<AtomsPage> {
           const SizedBox(height: DsSpacing.xxs),
           const DsBodyMedium('BodyMedium — texto de cuerpo Rubik'),
           const SizedBox(height: DsSpacing.xs),
-          DsBodyMedium('BodyMedium con color', color: DsColors.blue),
-          DsLabelSmall('LabelSmall con color', color: DsColors.red),
+          DsBodyMedium('BodyMedium con color'),
+          DsLabelSmall('LabelSmall con color'),
 
           const SizedBox(height: DsSpacing.lg),
 
           // ── DsInput ──
-          _SectionTitle('DsInput'),
+          DsHeadlineSmall('DsInput'),
           const SizedBox(height: DsSpacing.xs),
           DsInput(
             controller: _inputController,
@@ -73,7 +73,7 @@ class _AtomsPageState extends State<AtomsPage> {
           const SizedBox(height: DsSpacing.lg),
 
           // ── DsTypeBadge ──
-          _SectionTitle('DsTypeBadge'),
+          DsHeadlineSmall('DsTypeBadge'),
           const SizedBox(height: DsSpacing.xs),
           const DsLabelSmall('Tamaños disponibles:'),
           const SizedBox(height: DsSpacing.xs),
@@ -134,7 +134,7 @@ class _AtomsPageState extends State<AtomsPage> {
           const SizedBox(height: DsSpacing.lg),
 
           // ── DsTypeWrap ──
-          _SectionTitle('DsTypeWrap'),
+          DsHeadlineSmall('DsTypeWrap'),
           const SizedBox(height: DsSpacing.xs),
           Container(
             padding: const EdgeInsets.all(DsSpacing.sm),
@@ -157,7 +157,7 @@ class _AtomsPageState extends State<AtomsPage> {
           const SizedBox(height: DsSpacing.lg),
 
           // ── DsImageNetwork ──
-          _SectionTitle('DsImageNetwork'),
+          DsHeadlineSmall('DsImageNetwork'),
           const SizedBox(height: DsSpacing.xs),
           const DsLabelSmall('Carga imágenes con indicador y manejo de error'),
           const SizedBox(height: DsSpacing.xs),
@@ -185,7 +185,7 @@ class _AtomsPageState extends State<AtomsPage> {
           const SizedBox(height: DsSpacing.lg),
 
           // ── DsPokeballImage ──
-          _SectionTitle('DsPokeballImage'),
+          DsHeadlineSmall('DsPokeballImage'),
           const SizedBox(height: DsSpacing.xs),
           const DsLabelSmall('Imagen decorativa de Pokébola con opacidad'),
           const SizedBox(height: DsSpacing.xs),
@@ -201,21 +201,6 @@ class _AtomsPageState extends State<AtomsPage> {
           const SizedBox(height: DsSpacing.xxl),
         ],
       ),
-    );
-  }
-}
-
-class _SectionTitle extends StatelessWidget {
-  final String title;
-  const _SectionTitle(this.title);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: Theme.of(
-        context,
-      ).textTheme.titleLarge?.copyWith(color: DsColors.red),
     );
   }
 }

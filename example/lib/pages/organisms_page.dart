@@ -102,7 +102,7 @@ class _OrganismsPageState extends State<OrganismsPage> {
       // ── DsSearchAppBar ──
       appBar: DsSearchAppBar(
         leading: IconButton(
-          icon: const Icon(Icons.catching_pokemon, color: DsColors.red),
+          icon: const Icon(Icons.catching_pokemon),
           onPressed: () {},
         ),
         searchInput: DsSearchInput(
@@ -144,7 +144,7 @@ class _OrganismsPageState extends State<OrganismsPage> {
                   'Pokédex',
                   style: Theme.of(
                     context,
-                  ).textTheme.titleLarge?.copyWith(color: DsColors.red),
+                  ).textTheme.titleLarge,
                 ),
                 DsLabelSmall('${_filteredPokemon.length} Pokémon'),
               ],

@@ -33,6 +33,10 @@ class DsSearchInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final hintColor = isDark ? DsColors.darkTextSecondary : DsColors.greyDark;
+    final fillColor = isDark ? DsColors.darkCard : DsColors.white;
+
     return DsInput(
       controller: controller,
       autofocus: autofocus,
@@ -41,17 +45,17 @@ class DsSearchInput extends StatelessWidget {
       onSubmitted: onSubmitted,
       onTap: onTap,
       textInputAction: TextInputAction.search,
-      prefixIcon: const Icon(Icons.search, color: DsColors.greyDark),
+      prefixIcon: Icon(Icons.search, color: hintColor),
       suffixIcon: suffixIcon,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: Theme.of(
           context,
-        ).textTheme.bodyMedium?.copyWith(color: DsColors.greyDark),
-        prefixIcon: const Icon(Icons.search, color: DsColors.greyDark),
+        ).textTheme.bodyMedium?.copyWith(color: hintColor),
+        prefixIcon: Icon(Icons.search, color: hintColor),
         suffixIcon: suffixIcon,
         filled: true,
-        fillColor: DsColors.white,
+        fillColor: fillColor,
         contentPadding: const EdgeInsets.symmetric(
           horizontal: DsSpacing.md,
           vertical: DsSpacing.sm,

@@ -20,3 +20,4 @@ export 'src/molecules/ds_search_input.dart';
 // Organisms
 export 'src/organisms/ds_grid_card.dart';
 export 'src/organisms/ds_search_app_bar.dart';
+export 'src/organisms/ds_custom_app_bar.dart';

@@ -7,12 +7,12 @@ class TokensPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Tokens')),
+      appBar: DsCustomAppBar(title: 'Tokens',),
       body: ListView(
         padding: const EdgeInsets.all(DsSpacing.md),
         children: [
           // ── Colores Principales ──
-          _SectionTitle('Colores Principales'),
+          DsHeadlineSmall('Colores Principales'),
           const SizedBox(height: DsSpacing.xs),
           Wrap(
             spacing: DsSpacing.xs,
@@ -32,7 +32,7 @@ class TokensPage extends StatelessWidget {
           const SizedBox(height: DsSpacing.lg),
 
           // ── Colores de Tipos Pokémon ──
-          _SectionTitle('Colores de Tipos Pokémon'),
+          DsHeadlineSmall('Colores de Tipos Pokémon'),
           const SizedBox(height: DsSpacing.xs),
           Wrap(
             spacing: DsSpacing.xs,
@@ -62,7 +62,7 @@ class TokensPage extends StatelessWidget {
           const SizedBox(height: DsSpacing.lg),
 
           // ── Dark Theme Colors ──
-          _SectionTitle('Colores Dark Theme'),
+          DsHeadlineSmall('Colores Dark Theme'),
           const SizedBox(height: DsSpacing.xs),
           Wrap(
             spacing: DsSpacing.xs,
@@ -88,7 +88,7 @@ class TokensPage extends StatelessWidget {
           const SizedBox(height: DsSpacing.lg),
 
           // ── Spacing ──
-          _SectionTitle('Espaciado (DsSpacing)'),
+          DsHeadlineSmall('Espaciado (DsSpacing)'),
           const SizedBox(height: DsSpacing.xs),
           const _SpacingRow('xxs', DsSpacing.xxs),
           const _SpacingRow('xs', DsSpacing.xs),
@@ -101,7 +101,7 @@ class TokensPage extends StatelessWidget {
           const SizedBox(height: DsSpacing.lg),
 
           // ── Tipografía ──
-          _SectionTitle('Tipografía (TextTheme)'),
+          DsHeadlineSmall('Tipografía (TextTheme)'),
           const SizedBox(height: DsSpacing.xs),
           _TypographyPreview(context),
 
@@ -113,22 +113,6 @@ class TokensPage extends StatelessWidget {
 }
 
 // ── Helpers ──
-
-class _SectionTitle extends StatelessWidget {
-  final String title;
-  const _SectionTitle(this.title);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: Theme.of(
-        context,
-      ).textTheme.titleLarge?.copyWith(color: DsColors.red),
-    );
-  }
-}
-
 class _ColorChip extends StatelessWidget {
   final String label;
   final Color color;
