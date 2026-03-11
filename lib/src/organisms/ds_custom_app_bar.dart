@@ -8,6 +8,9 @@ import '../tokens/ds_spacing.dart';
 /// Se adapta automáticamente al tema Light/Dark.
 /// Widget puramente presentacional — sin lógica ni estado.
 class DsCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  /// Si `true`, muestra el botón de retroceso.
+  final bool showBackButton;
+
   /// Callback al pulsar la flecha de retroceso.
   final VoidCallback? onBack;
 
@@ -25,12 +28,16 @@ class DsCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   final double heightPokeball;
 
+  final Icon? icon;
+
   const DsCustomAppBar({
     super.key,
+    this.showBackButton = true,
     this.onBack,
     this.title,
     this.titleColor,
     this.backgroundColor,
+    this.icon,
     this.heightAppbar = 120,
     this.heightPokeball = 250,
   });
@@ -59,11 +66,11 @@ class DsCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  IconButton(
-                    onPressed: onBack ?? () => Navigator.of(context).maybePop(),
-                    icon: Icon(Icons.arrow_back, color: iconColor, size: 28),
-                    tooltip: 'Volver',
-                  ),
+                  if (showBackButton)
+                    IconButton(
+                      onPressed: onBack,
+                      icon: Icon(Icons.arrow_back, color: iconColor, size: 28),
+                    ),
                   if (title != null) ...[
                     const Spacer(),
                     Text(
